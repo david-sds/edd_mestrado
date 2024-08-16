@@ -2,12 +2,21 @@
 import random
 
 #matricula; salario; codigo setor
+count = 1
+tamanho = 10
+lista_dict = []
 
-tamanho = 2
-dicionario_2 = {'brasil': 'sp'}
+for count in range(1, tamanho+1):
+    registros = {
+        f'matricula {count}': random.randint(100000000, 999999999)
+    }
+    lista_dict.append(registros)
 
-dicionario = {f'matricula {i}': random.randint(100000000, 999999999)
-              for i in range(1, tamanho + 1)}
+for registros in lista_dict:
+    print(registros)
+    
 
-print(dicionario)
-print(dicionario_2)
+
+
+
+
