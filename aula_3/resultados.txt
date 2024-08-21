@@ -1,0 +1,75 @@
+MODULOS: 1000
+ITENS: 5000
+colisoes: 4006
+tempo medio de busca 0.0ms
+media: 0.8012
+desvio padrao: 3.9399955011152374
+
+MODULOS: 1000
+ITENS: 20000
+colisoes: 19994
+tempo medio de busca 0.0ms
+media: 0.9997
+desvio padrao: 19.516182938525674
+
+MODULOS: 1000
+ITENS: 100000
+colisoes: 100000
+tempo medio de busca 0.0ms
+media: 1.0
+desvio padrao: 99.5417801729505
+
+MODULOS: 10000
+ITENS: 5000
+colisoes: 1077
+tempo medio de busca 0.0ms
+media: 0.2154
+desvio padrao: 1.0665069490072248
+
+MODULOS: 10000
+ITENS: 20000
+colisoes: 14702
+tempo medio de busca 0.0ms
+media: 0.7351
+desvio padrao: 1.8033877903596387
+
+MODULOS: 10000
+ITENS: 100000
+colisoes: 99221
+tempo medio de busca 0.0ms
+media: 0.99221
+desvio padrao: 9.480551494491108
+
+MODULOS: 100000
+ITENS: 5000
+colisoes: 120
+tempo medio de busca 0.0ms
+media: 0.024
+desvio padrao: 1.0140356540537934
+
+MODULOS: 100000
+ITENS: 20000
+colisoes: 2777
+tempo medio de busca 0.0ms
+media: 0.13885
+desvio padrao: 0.9912078659078012
+
+MODULOS: 100000
+ITENS: 100000
+colisoes: 50739
+tempo medio de busca 0.0ms
+media: 0.50739
+desvio padrao: 1.2113241745758345
+
+searching 419556913...
+searching 923233171...
+searching 739785193...
+searching 200159255...
+searching 613618430...
+searching 150459487...
+searching 733815537...
+searching 792350327...
+searching 145430681...
+searching 531952738...
+tempo medio busca hash_table: 0.0ms
+tempo medio busca list: 6.2528076171875ms
