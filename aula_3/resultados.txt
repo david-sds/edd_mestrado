@@ -1,75 +1,75 @@
 MODULOS: 1000
 ITENS: 5000
-colisoes: 4006
-tempo medio de busca 0.0ms
-media: 0.8012
-desvio padrao: 3.9399955011152374
+colisoes: 4008
+tempo medio de busca 0.004736328125ms
+media: 0.8016
+desvio padrao: 3.988826471354377
 
 MODULOS: 1000
 ITENS: 20000
-colisoes: 19994
-tempo medio de busca 0.0ms
-media: 0.9997
-desvio padrao: 19.516182938525674
+colisoes: 19992
+tempo medio de busca 0.0050537109375ms
+media: 0.9996
+desvio padrao: 19.476529304781177
 
 MODULOS: 1000
 ITENS: 100000
 colisoes: 100000
-tempo medio de busca 0.0ms
+tempo medio de busca 0.0049072265625ms
 media: 1.0
-desvio padrao: 99.5417801729505
+desvio padrao: 99.49867335799006
 
 MODULOS: 10000
 ITENS: 5000
-colisoes: 1077
-tempo medio de busca 0.0ms
-media: 0.2154
-desvio padrao: 1.0665069490072248
+colisoes: 1088
+tempo medio de busca 0.0016845703125ms
+media: 0.2176
+desvio padrao: 1.0819924467096995
 
 MODULOS: 10000
 ITENS: 20000
-colisoes: 14702
-tempo medio de busca 0.0ms
-media: 0.7351
-desvio padrao: 1.8033877903596387
+colisoes: 14720
+tempo medio de busca 0.001904296875ms
+media: 0.736
+desvio padrao: 1.8074965580758593
 
 MODULOS: 10000
 ITENS: 100000
-colisoes: 99221
-tempo medio de busca 0.0ms
-media: 0.99221
-desvio padrao: 9.480551494491108
+colisoes: 99192
+tempo medio de busca 0.0020263671875ms
+media: 0.99192
+desvio padrao: 9.480916639935687
 
 MODULOS: 100000
 ITENS: 5000
-colisoes: 120
-tempo medio de busca 0.0ms
-media: 0.024
-desvio padrao: 1.0140356540537934
+colisoes: 144
+tempo medio de busca 0.0017578125ms
+media: 0.0288
+desvio padrao: 1.031241802792797
 
 MODULOS: 100000
 ITENS: 20000
-colisoes: 2777
-tempo medio de busca 0.0ms
-media: 0.13885
-desvio padrao: 0.9912078659078012
+colisoes: 2680
+tempo medio de busca 0.00146484375ms
+media: 0.134
+desvio padrao: 0.9915269176542594
 
 MODULOS: 100000
 ITENS: 100000
-colisoes: 50739
-tempo medio de busca 0.0ms
-media: 0.50739
-desvio padrao: 1.2113241745758345
+colisoes: 50754
+tempo medio de busca 0.00146484375ms
+media: 0.50754
+desvio padrao: 1.2135154265865113
 
-searching 419556913...
-searching 923233171...
-searching 739785193...
-searching 200159255...
-searching 613618430...
-searching 150459487...
-searching 733815537...
-searching 792350327...
-searching 145430681...
-searching 531952738...
-tempo medio busca hash_table: 0.0ms
-tempo medio busca list: 6.2528076171875ms
+searching 978997150...
+searching 784796053...
+searching 274446179...
+searching 613948815...
+searching 707416245...
+searching 799714308...
+searching 416324186...
+searching 855040035...
+searching 872569870...
+searching 648754925...
+tempo medio busca hash_table: 0.002685546875ms
+tempo medio busca list: 2.77568359375ms
