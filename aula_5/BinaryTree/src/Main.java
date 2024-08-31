@@ -94,9 +94,6 @@ public class Main {
 
         System.out.println("\nTreePrinter - bt2:\n");
         printer.printTree(bt2.getRoot());
-
-        System.out.println("\nA ÁRVORE DO VILMAR ESTÁ NO INÍCIO\n");
-
     }
 
 }

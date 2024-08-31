@@ -6,16 +6,16 @@ import java.util.function.Function;
 
 public class TreePrinter<T> {
 
-    private Function<T, String> getLabel;
-    private Function<T, T> getLeft;
-    private Function<T, T> getRight;
+    private final Function<T, String> getLabel;
+    private final Function<T, T> getLeft;
+    private final Function<T, T> getRight;
 
     private PrintStream outStream = System.out;
 
     private boolean squareBranches = false;
     private boolean lrAgnostic = false;
     private int hspace = 2;
-    private int tspace = 1;
+    private final int tspace = 1;
 
     public TreePrinter(Function<T, String> getLabel, Function<T, T> getLeft, Function<T, T> getRight) {
         this.getLabel = getLabel;
@@ -110,7 +110,7 @@ public class TreePrinter<T> {
     }
 
     private void printTreeLines(List<TreeLine> treeLines) {
-        if (treeLines.size() > 0) {
+        if (!treeLines.isEmpty()) {
             int minLeftOffset = minLeftOffset(treeLines);
             int maxRightOffset = maxRightOffset(treeLines);
             for (TreeLine treeLine : treeLines) {
