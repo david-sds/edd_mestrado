@@ -5,6 +5,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.stream.LongStream;
 
+import avl_tree.AvlTree;
+
 public class Main {
 
     static Random random = new Random();
@@ -23,15 +25,16 @@ public class Main {
         
         List<Integer> list = new ArrayList<>(set);
 
-        Tree tree = new Tree();
+        AvlTree
+         avlTree = new AvlTree();
         RedBlackTree<Integer> redBlackTree = new RedBlackTree<Integer>();
 
         for (Integer num : list) {
-            tree.inserir(num);
+            avlTree.insertData(num);
             redBlackTree.insert(num);
         }
 
-        int numberOfSearchs = 100;
+        int numberOfSearchs = 10000;
         int[] searchValues = new int[numberOfSearchs];
         long[] elepsedTimesRBT = new long[numberOfSearchs];
         long[] elepsedTimesBT = new long[numberOfSearchs];
@@ -46,16 +49,16 @@ public class Main {
             long start, end, elapsed;
             
             start = System.nanoTime();
-            tree.buscar(value);
+            avlTree.searchData(value);
             end = System.nanoTime();
             elapsed = end - start;
-            elepsedTimesRBT[i] = elapsed;
+            elepsedTimesBT[i] = elapsed;
             
             start = System.nanoTime();
             redBlackTree.search(value);
             end = System.nanoTime();
             elapsed = end - start;
-            elepsedTimesBT[i] = elapsed;
+            elepsedTimesRBT[i] = elapsed;
 
             System.out.println(
                 "Search " + (i + 1) + ": " + value + "; " +
