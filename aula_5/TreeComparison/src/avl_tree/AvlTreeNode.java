@@ -9,8 +9,8 @@ public class AvlTreeNode {
      * balanceFactor: Factor de balanceo del nodo leftChild: Hijo izquierdo del nodo
      * rightChild: Hijo derecho del nodo
      */
-    private int data;
-    private int balanceFactor;
+    private long data;
+    private long balanceFactor;
     private AvlTreeNode leftChild;
     private AvlTreeNode rightChild;
 
@@ -19,7 +19,7 @@ public class AvlTreeNode {
      * inicializa los datos cada que se crea un objeto de la clase
      * @param data, valor que el nodo va a almacenar
      */
-    public AvlTreeNode(int data) {
+    public AvlTreeNode(long data) {
         this.data = data;
         this.balanceFactor = 1;
         this.leftChild = null;
@@ -31,7 +31,7 @@ public class AvlTreeNode {
      * Retorna el dato de un nodo
      * @return dato del nodo
      */
-    public int getData() {
+    public long getData() {
         return data;
     }
     
@@ -40,7 +40,7 @@ public class AvlTreeNode {
      * Asigna un dato al nodo
      * @param data, dato a insertar en el nodo
      */
-    public void setData(int data) {
+    public void setData(long data) {
         this.data = data;
     }
     
@@ -49,7 +49,7 @@ public class AvlTreeNode {
      * Retorna el factor de balance de un nodo
      * @return factor de balance del nodo
      */
-    public int getBalanceFactor() {
+    public long getBalanceFactor() {
         return balanceFactor;
     }
     
@@ -58,7 +58,7 @@ public class AvlTreeNode {
      * Asigna el factor de balance a un nodo
      * @param balanceFactor, valor del factor de balance del nodo
      */
-    public void setBalanceFactor(int balanceFactor) {
+    public void setBalanceFactor(long balanceFactor) {
         this.balanceFactor = balanceFactor;
     }
     

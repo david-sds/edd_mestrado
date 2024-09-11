@@ -12,33 +12,31 @@ public class Main {
     static Random random = new Random();
 
     public static void main(String[] args) {
-        int[] seeds = {0, 1, 2, 3, 4};
-        int[] numbers = {100, 1000, 10000, 100000, 1000000};
-        for (int j = 0; j < 5; j++) {
-            Random random = new Random(seeds[j]);
-            int numberOfItems = numbers[j];
+        long[] numbers = {4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144, 1048576, 4194304, 16777216};
+        for (int j = 0; j < numbers.length; j++) {
+            Random random = new Random(j);
+            long numberOfItems = numbers[j];
 
-            Set<Integer> set = new HashSet<Integer>();
+            Set<Long> set = new HashSet<Long>();
 
             // Generate random numbers until we have 'n' unique numbers
             while (set.size() < numberOfItems) {
-                int randomNumber = random.nextInt(numberOfItems * 1000);
+                long randomNumber = random.nextLong(numberOfItems * 1000);
                 set.add(randomNumber);
             }
             
-            List<Integer> list = new ArrayList<>(set);
+            List<Long> list = new ArrayList<>(set);
 
-            AvlTree
-            avlTree = new AvlTree();
-            RedBlackTree<Integer> redBlackTree = new RedBlackTree<Integer>();
+            AvlTree avlTree = new AvlTree();
+            RedBlackTree<Long> redBlackTree = new RedBlackTree<Long>();
 
-            for (Integer num : list) {
+            for (Long num : list) {
                 avlTree.insertData(num);
                 redBlackTree.insert(num);
             }
 
             int numberOfSearchs = 10000;
-            int[] searchValues = new int[numberOfSearchs];
+            long[] searchValues = new long[numberOfSearchs];
             long[] elepsedTimesRBT = new long[numberOfSearchs];
             long[] elepsedTimesBT = new long[numberOfSearchs];
             
@@ -48,7 +46,7 @@ public class Main {
             }
 
             for (int i = 0; i < searchValues.length; i++) {
-                int value = searchValues[i];
+                long value = searchValues[i];
                 long start, end, elapsed;
                 
                 start = System.nanoTime();

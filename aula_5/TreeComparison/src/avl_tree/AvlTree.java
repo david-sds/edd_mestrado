@@ -58,7 +58,7 @@ public class AvlTree {
      * @param node, nodo al cuál se le quiere calcular el factor de balance
      * @return factor de balance del nodo
      */
-    private int getHeight(AvlTreeNode node) {
+    private long getHeight(AvlTreeNode node) {
         if (node == null) {
             return 0;
         } else {
@@ -73,7 +73,7 @@ public class AvlTree {
      * @param y
      * @return el menor valor de x e y
      */
-    private int getMaxValue(int x, int y) {
+    private long getMaxValue(long x, long y) {
         return (x > y) ? x : y;
     }
 
@@ -137,7 +137,7 @@ public class AvlTree {
      * @param node, nodo al cual se le quiere calcular el factor de balance
      * @return factor de balance del nodo
      */
-    private int getBalance(AvlTreeNode node) {
+    private long getBalance(AvlTreeNode node) {
         if (node == null) {
             return 0;
         } else {
@@ -168,7 +168,7 @@ public class AvlTree {
      * @param data, valor que se quiere insertar en el árbol
      * @return nuevo nodo insertado
      */
-    private AvlTreeNode insertNode(AvlTreeNode node, int data) {
+    private AvlTreeNode insertNode(AvlTreeNode node, long data) {
         if (node == null) {
             return (new AvlTreeNode(data));
         }
@@ -186,7 +186,7 @@ public class AvlTree {
                 getHeight(node.getRigthChild())
         ) + 1);
 
-        int balance = getBalance(node);
+        long balance = getBalance(node);
 
         if (balance > 1 && data < node.getLeftChild().getData()) {
             return rightRotation(node);
@@ -217,7 +217,7 @@ public class AvlTree {
      * @param data, valor que se quiere eliminar del árbol
      * @return nodo eliminado
      */
-    private AvlTreeNode deleteNode(AvlTreeNode root, int data) {
+    private AvlTreeNode deleteNode(AvlTreeNode root, long data) {
         if (root == null) {
             return root;
         }
@@ -257,7 +257,7 @@ public class AvlTree {
                 getHeight(root.getRigthChild())
         ) + 1);
 
-        int balance = getBalance(root);
+        long balance = getBalance(root);
 
         if (balance > 1 && getBalance(root.getLeftChild()) >= 0) {
             return rightRotation(root);
@@ -287,7 +287,7 @@ public class AvlTree {
      * @param data, dato a buscar
      * @return nodo que contiene el dato buscado
      */
-    private AvlTreeNode searchNode(AvlTreeNode root, int data) {
+    private AvlTreeNode searchNode(AvlTreeNode root, long data) {
         if (root == null) {
             return null;
         } else if (root.getData() == data) {
@@ -305,8 +305,8 @@ public class AvlTree {
      * @param root, nodo raíz del árbol
      * @return número de hojas del árbol
      */
-    private int countLeaves(AvlTreeNode root){
-        int leaves = 0;
+    private long countLeaves(AvlTreeNode root){
+        long leaves = 0;
         if(root != null){
             if(root.getLeftChild() == null && root.getRigthChild() == null){
                 leaves += 1;
@@ -323,7 +323,7 @@ public class AvlTree {
      * @param root, nodo raíz del árbol
      * @return número de nodos del árbol
      */
-    private int countNodes(AvlTreeNode root){
+    private long countNodes(AvlTreeNode root){
         if(root == null){
             return 0;
         } else {
@@ -337,9 +337,9 @@ public class AvlTree {
      * @param root, nodo raíz del árbol
      * @return altura del árbol
      */
-    private int treeHeight(AvlTreeNode root){
-        int leftHeight = 0;
-        int rightHeight = 0;
+    private long treeHeight(AvlTreeNode root){
+        long leftHeight = 0;
+        long rightHeight = 0;
         if(root == null){
             return 0;
         }
@@ -359,9 +359,9 @@ public class AvlTree {
      * @return true si el árbol es lleno, false de lo contrario
      */
     private boolean isFullTree(AvlTreeNode root){
-        int treeHeight = treeHeight(root);
-        int numberNodes = countNodes(root);
-        int full = (int)Math.pow(2, (treeHeight)) - 1;
+        long treeHeight = treeHeight(root);
+        long numberNodes = countNodes(root);
+        long full = (long)Math.pow(2, (treeHeight)) - 1;
         if(numberNodes == full){
             return true;
         }
@@ -375,7 +375,7 @@ public class AvlTree {
      * @param index, índice de un nodo, (i para root, 2*i+1 para el hijo izquierdo, 2*i+2 para el hijo derecho)
      * @return true si el árbol es completo, false de lo contrario
      */
-    private boolean isCompleteTree(AvlTreeNode root, int index, int numberNodes){
+    private boolean isCompleteTree(AvlTreeNode root, long index, long numberNodes){
         if(root == null){
             return true;
         }
@@ -395,7 +395,7 @@ public class AvlTree {
      * @param data, dato cuyo padre se quiere encontrar en el árbol
      * @return nodo que contiene el padre del dato data
      */
-    private AvlTreeNode nodeParent(AvlTreeNode root, int data){
+    private AvlTreeNode nodeParent(AvlTreeNode root, long data){
        AvlTreeNode auxNode;
        AvlTreeNode parent = null;
        if(root != null){
@@ -430,7 +430,7 @@ public class AvlTree {
      * @param data, dato cuyos ancestros se quieren encontrar en el árbol
      * @return pila que contiene los ancestros del nodo que contiene el dato data
      */
-    private Stack nodeAncestors(AvlTreeNode root, int data){
+    private Stack nodeAncestors(AvlTreeNode root, long data){
         Stack stack = new Stack();
         AvlTreeNode parent = null;
         parent = nodeParent(root, data);
@@ -559,7 +559,7 @@ public class AvlTree {
      * @param data, valor a insertar en el árbol
      * @return mensage equivalente al resultado de la operación
      */
-    public String insertData(int data) {
+    public String insertData(long data) {
         String message;
         try {
             setRoot(insertNode(getRoot(), data));
@@ -579,7 +579,7 @@ public class AvlTree {
      * @param data, valor a eliminar del árbol
      * @return mensage equivalente al resultado de la operación
      */
-    public String deleteData(int data) {
+    public String deleteData(long data) {
         String message;
         try {
             setRoot(deleteNode(getRoot(), data));
@@ -599,10 +599,10 @@ public class AvlTree {
      * @param data, valor a buscar en el árbol
      * @return mensage equivalente al resultado de la operación
      */ 
-    public String searchData(int data) {
+    public String searchData(long data) {
         String message;
         try {
-            int dataResponse = searchNode(getRoot(), data).getData();
+            long dataResponse = searchNode(getRoot(), data).getData();
             message = "El dato " + dataResponse + " se encuentra en el árbol";
         } catch (Exception e) {
             message = "El dato " + data + " no ha sido encontrado"; 
@@ -620,7 +620,7 @@ public class AvlTree {
      */
     public String getCountLeaves(){
         String message;
-        int numerLeaves = 0;
+        long numerLeaves = 0;
         try {
             numerLeaves = countLeaves(getRoot());
             message = "el número de hojas del árbol es " + numerLeaves;
@@ -640,7 +640,7 @@ public class AvlTree {
      */
     public String getTreeHeight(){
         String message;
-        int treeHeight = 0;
+        long treeHeight = 0;
         try {
             treeHeight = treeHeight(getRoot());
             message = "La altura del árbol es " + treeHeight;
@@ -660,7 +660,7 @@ public class AvlTree {
      */
      public String getNumberNodes(){
         String message;
-        int numberNodes = 0;
+        long numberNodes = 0;
         try {
             numberNodes = countNodes(getRoot());
             message = "El árbol tiene  " + numberNodes + " nodos";
@@ -697,7 +697,7 @@ public class AvlTree {
      
      public String getIsCompleteTree(){
          String message = "";
-         int numberNodes = 0;
+         long numberNodes = 0;
          boolean isComplete = false;
          try {
              numberNodes = countNodes(getRoot());
@@ -722,7 +722,7 @@ public class AvlTree {
       * @param data, dato cuyo padre se quiere encontrar en el árbol
       * @return mensage equivalente al resultado de la operación
       */
-     public String getNodeParent(int data){
+     public String getNodeParent(long data){
          String message = 
                   "------------------------------------------------------ "
                 + "Padre del Nodo"
@@ -745,7 +745,7 @@ public class AvlTree {
       * @param data, dato cuyos ancestros se quieren encontrar en el árbol
       * @return  mensage equivalente al resultado de la operación
       */
-     public String getNodeAncestors(int data){
+     public String getNodeAncestors(long data){
          String message = 
                  "---------------------------------------------------- "
                 + "Ancestros del Nodo"
