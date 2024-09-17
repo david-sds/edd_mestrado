@@ -104,7 +104,7 @@ def game_loop():
         pygame.display.flip()
 
         # Controlar o FPS
-        clock.tick(15)
+        clock.tick(100)
 
     pygame.quit()
 
