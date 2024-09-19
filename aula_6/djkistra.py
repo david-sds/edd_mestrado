@@ -10,8 +10,39 @@ import matplotlib.pyplot as plt
    grafo : vetor[1..100, 1..100] de inteiro
    peso, menorDistancia : inteiro"""
 
-N = int(input("Digite o número de nós (N): "))
-M = int(input("Digite o número de arestas (M): "))
+N = 28  # Número de nós
+arestas = [
+    (0, 1, 11.4),  # Conecta o nó 0 ao nó 1
+    (1, 2, 36.0),  # Conecta o nó 1 ao nó 2
+    (2, 3, 40.8),  # Conecta o nó 2 ao nó 3
+    (3, 4, 34.3),  # Conecta o nó 3 ao nó 4
+    (4, 5, 8.39),  # Conecta o nó 4 ao nó 5
+    (5, 6, 26.1),  # Conecta o nó 5 ao nó 6
+    (6, 7, 15.9),  # Conecta o nó 6 ao nó 7
+    (7, 8, 33.5),  # Conecta o nó 7 ao nó 8
+    (8, 9, 30.1),  # Conecta o nó 8 ao nó 9
+    (9, 10, 34.3), # Conecta o nó 9 ao nó 10
+    (10, 11, 36.3),# Conecta o nó 10 ao nó 11
+    (11, 12, 16.0),# Conecta o nó 11 ao nó 12
+    (12, 13, 25.9),# Conecta o nó 12 ao nó 13
+    (13, 14, 31.3),# Conecta o nó 13 ao nó 14
+    (14, 15, 40.8),# Conecta o nó 14 ao nó 15
+    (15, 16, 46.2),# Conecta o nó 15 ao nó 16
+    (16, 17, 55.8),# Conecta o nó 16 ao nó 17
+    (17, 18, 27.1),# Conecta o nó 17 ao nó 18
+    (18, 19, 33.5),# Conecta o nó 18 ao nó 19
+    (19, 20, 43.8),# Conecta o nó 19 ao nó 20
+    (20, 21, 28.7),# Conecta o nó 20 ao nó 21
+    (21, 22, 21.0),# Conecta o nó 21 ao nó 22
+    (22, 23, 40.5),# Conecta o nó 22 ao nó 23
+    (23, 24, 30.9),# Conecta o nó 23 ao nó 24
+    (24, 25, 25.0),# Conecta o nó 24 ao nó 25
+    (25, 10, 25.0),# Aresta adicional: Conecta o nó 25 ao nó 10
+    (22, 26, 19.4),# Aresta adicional: Conecta o nó 22 ao nó 26
+    (26, 27, 40.8),# Conecta o nó 26 ao nó 27
+    (27, 0, 37.0), # Conecta o nó 27 de volta ao nó 0, formando o ciclo
+]
+
 
 grafo = {}
 distancia = [float('inf')] * N  # Distâncias inicialmente infinitas
@@ -29,10 +60,11 @@ for i in range(N):
     grafo[i] = {}
 
 # Ler as arestas e adicionar os pesos
-for _ in range(M):
-    origem, destino, peso = map(int, input("Digite a aresta (origem, destino, peso): ").split())
+for origem, destino, peso in arestas:
     grafo[origem][destino] = peso
-    grafo[destino][origem] = peso  # Se o grafo for não-direcionado
+    grafo[destino][origem] = peso  
+    
+# Se o grafo for não-direcionado
 
 #Passo 3: Inicializar o Vetor de Distâncias e de Visitados
 """// Inicializar as distâncias e o vetor de visitados
@@ -48,8 +80,8 @@ fimpara"""
 """// Definir a distância do nó de origem para ele mesmo como 0
 distancia[origem] <- 0"""
 
-origem = int(input("Digite o nó de origem: "))
-distancia[origem] = 0  # A distância da origem para si mesmo é 0
+origem = 0  # Definimos o nó de origem como 0
+distancia[origem] = 0 # A distância da origem para si mesmo é 0
 
 #Passo 5: O Algoritmo Principal de Dijkstra
 """para i de 1 ate N faca
