@@ -31,7 +31,7 @@ arestas = [
     (16, 17, 55.8),# Conecta o nó 16 ao nó 17
     (17, 18, 27.1),# Conecta o nó 17 ao nó 18
     (18, 19, 33.5),# Conecta o nó 18 ao nó 19
-    (19, 20, 43.8),# Conecta o nó 19 ao nó 20
+    (18, 20, 43.8),# Conecta o nó 19 ao nó 20
     (20, 21, 28.7),# Conecta o nó 20 ao nó 21
     (21, 22, 21.0),# Conecta o nó 21 ao nó 22
     (22, 23, 40.5),# Conecta o nó 22 ao nó 23
